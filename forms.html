@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TasteBuds Delight Order Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f8efd4, #fdebd0);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fffaf4;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #e17055;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            border: 2px dashed #f39c12;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        legend {
+            font-weight: bold;
+            color: #d35400;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="datetime-local"],
+        select,
+        textarea {
+            width: 98%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fffaf0;
+        }
+        .order-section img {
+            width: 90px;
+            margin: 10px 10px 0 0;
+            border-radius: 8px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        .buttons input {
+            padding: 12px 25px;
+            margin: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn {
+            background-color: #27ae60;
+            color: white;
+        }
+        .submit-btn:hover {
+            background-color: #1e8449;
+        }
+        .reset-btn {
+            background-color: #c0392b;
+            color: white;
+        }
+        .reset-btn:hover {
+            background-color: #922b21;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FingerLicking Order Form</h1>
+
+        <form>
+            <fieldset>
+                <legend>Customer Information</legend>
+                <label>Full Name:</label>
+                <input type="text" name="fullname" required>
+
+                <label>Complete Address:</label>
+                <input type="text" name="address" required>
+
+                <label>Contact Number:</label>
+                <input type="tel" name="contact" required>
+
+                <label>Email Address:</label>
+                <input type="email" name="email" required>
+
+                <label>How do we reach your location?</label>
+                <textarea name="directions" rows="3" placeholder="Landmarks, gates, etc..."></textarea>
+
+                <label>Date and Time of Order:</label>
+                <input type="datetime-local" name="datetime" required>
+            </fieldset>
+
+            <fieldset class="order-section">
+                <legend>Your OWN Burger</legend>
+                <label>Burger Style:</label>
+                <input type="checkbox" name="burger[]" value="single patty"> Single Patty
+                <input type="checkbox" name="burger[]" value="double patty"> Double Patty
+                <input type="checkbox" name="burger[]" value="cheese"> With Cheese
+                <input type="checkbox" name="burger[]" value="coleslaw"> Coleslaw
+                <input type="checkbox" name="burger[]" value="bacon"> Bacon
+                <input type="checkbox" name="burger[]" value="tomato"> Tomato
+                <input type="checkbox" name="burger[]" value="onion"> Onion
+                <input type="checkbox" name="burger[]" value="cucumber"> Cucumber
+
+                <label>Choice of Bun:</label>
+                <select name="bun">
+                    <option value="white bun">White Bun</option>
+                    <option value="wheat bun">Wheat Bun</option>
+                    <option value="honey oat">Honey Oat</option>
+                    <option value="sugar-free">Sugar-Free</option>
+                </select>
+
+                <label>Quantity:</label>
+                <input type="number" name="burger_qty" min="1">
+            </fieldset>
+
+            <fieldset class="order-section">
+                <legend>Choose your Pasta</legend>
+                <label>Choose Your Sauce & Add-ons:</label>
+                <input type="checkbox" name="pasta[]" value="carbonara"> Carbonara
+                <input type="checkbox" name="pasta[]" value="pesto"> Pesto
+                <input type="checkbox" name="pasta[]" value="spaghetti"> Spaghetti
+                <input type="checkbox" name="pasta[]" value="extra cheese"> Extra Cheese
+                <input type="checkbox" name="pasta[]" value="extra sauce"> Extra Sauce
+                <input type="checkbox" name="pasta[]" value="mushroom"> Mushroom
+
+                <label>Quantity (per box):</label>
+                <input type="number" name="pasta_qty" min="1">
+            </fieldset>
+
+            <fieldset class="order-section">
+                <legend>Fries Frenzy</legend>
+                <label>Size:</label>
+                <input type="radio" name="fries_size" value="S"> Small
+                <input type="radio" name="fries_size" value="M"> Medium
+                <input type="radio" name="fries_size" value="L"> Large
+
+                <label>Flavor:</label>
+                <select name="fries_flavor">
+                    <option value="bbq">BBQ</option>
+                    <option value="cheese">Cheese</option>
+                    <option value="sour cream">Sour Cream</option>
+                    <option value="plain">Plain</option>
+                </select>
+
+                <label>Quantity:</label>
+                <input type="number" name="fries_qty" min="1">
+            </fieldset>
+
+            <fieldset class="order-section">
+                <legend>Chill with Drinks</legend>
+                <label>Drink:</label>
+                <input type="text" name="drink_type" placeholder="e.g. Iced Tea, Soda, Lemonade">
+
+                <label>Size:</label>
+                <select name="drink_size">
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                </select>
+
+                <label>Quantity:</label>
+                <input type="number" name="drink_qty" min="1">
+            </fieldset>
+
+            <fieldset>
+                <legend>We Value Your Feedback</legend>
+                <label>Any suggestions to improve our order form?</label>
+                <textarea name="feedback" rows="3" placeholder="We’d love to hear from you!"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Delivery Option</legend>
+                <input type="radio" name="delivery" value="delivery" required> Delivery
+                <input type="radio" name="delivery" value="pickup" required> Pick-up
+            </fieldset>
+
+            <div class="buttons">
+                <input type="submit" value="Submit Order" class="submit-btn">
+                <input type="reset" value="Clear Form" class="reset-btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
